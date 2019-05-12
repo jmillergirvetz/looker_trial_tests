@@ -1,4 +1,6 @@
 connection: "looker_test_the_look"
+
+
 label: "1) eCommerce with Event Data"
 include: "*.view" # include all the views
 
