@@ -1,5 +1,5 @@
 view: order_items {
-  sql_table_name: ecomm.order_items ;;
+  sql_table_name: public.order_items ;;
   ########## IDs, Foreign Keys, Counts ###########
 
   dimension: id {

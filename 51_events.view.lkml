@@ -1,5 +1,5 @@
 view: events {
-  sql_table_name: ecomm.events ;;
+  sql_table_name: public.events ;;
 
   dimension: event_id {
     type: number
@@ -66,7 +66,7 @@ view: events {
   }
 
   dimension: full_page_url {
-    sql: ${TABLE}."uri" ;;
+    sql: ${TABLE}.uri ;;
   }
 
   dimension: viewed_product_id {

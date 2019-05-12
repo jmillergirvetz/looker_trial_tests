@@ -7,7 +7,7 @@ view: user_order_facts {
         , MIN(created_at) AS first_order
         , MAX(created_at) AS latest_order
         , COUNT(DISTINCT DATE_TRUNC('month', created_at)) AS number_of_distinct_months_with_orders
-      FROM ecomm.order_items
+      FROM public.order_items
       GROUP BY user_id
        ;;
     datagroup_trigger: ecommerce_etl

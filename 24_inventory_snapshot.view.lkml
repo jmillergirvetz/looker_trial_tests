@@ -4,7 +4,7 @@ view: inventory_snapshot {
     sql: with calendar as
       (
       select distinct to_date(created_at) as snapshot_date
-      from ecomm.inventory_items
+      from public.inventory_items
       -- where dateadd('day',90,created_at)>=current_date
       )
 
@@ -12,7 +12,7 @@ view: inventory_snapshot {
       inventory_items.product_id
       ,calendar.snapshot_date
       ,count(*) as number_in_stock
-      from ecomm.inventory_items
+      from public.inventory_items
       left join calendar
       on inventory_items.created_at <= calendar.snapshot_date
       and (inventory_items.sold_at >= calendar.snapshot_date OR inventory_items.sold_at is null)

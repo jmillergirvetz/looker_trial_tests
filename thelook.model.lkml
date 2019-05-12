@@ -3,12 +3,13 @@ connection: "looker_test_the_look"
 
 label: "1) eCommerce with Event Data"
 include: "*.view" # include all the views
+include: "business_pulse_overview_test.dashboard.lookml"
 
 
 ############ Model Configuration #############
 
 datagroup: ecommerce_etl {
-  sql_trigger: SELECT max(completed_at) FROM ecomm.etl_jobs ;;
+  sql_trigger: SELECT CURRENT_DATE  ;;
   max_cache_age: "24 hours"}
 persist_with: ecommerce_etl
 ############ Base Explores #############
